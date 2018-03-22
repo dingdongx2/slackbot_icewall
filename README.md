@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##Overaction rabbit
 
 - slackbot in 'ICEWALL'
@@ -17,4 +18,6 @@ how to use?
 > Talking
 ask him/her
 짖어라 / 아이스 / 인사해봐 / 소개해봐 / 토끼야 안녕
+=======
+>>>>>>> 1e369f8f8f6d77099e32b692270011ef6039731e
 
