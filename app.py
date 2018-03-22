@@ -56,7 +56,7 @@ def parse_bot_commands(slack_events):
                 message = message.split(' 번호알아?')[0]
                 return message, event["channel"]
             elif message.endswith("번호내놔"):
-                message = message.split(' 번호내')[0]
+                message = message.split(' 번호내놔')[0]
                 return message, event["channel"]
 
             # return message, event["channel"]
