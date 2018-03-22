@@ -3,12 +3,14 @@ import re
 import json
 with open('./direction.json', encoding="UTF8") as f:    
     data = json.load(f)
+with open('./store.json') as f:
+    store = json.load(f)
 
 from time import sleep
 from slackclient import SlackClient
 
 config = json.load(open('config.json'))
-slack_client = SlackClient(os.environ['ICEWALL_SLACK_TOKEN'])
+slack_client = SlackClient(store["key"])
 starterbot_id = 'overaction'
 
 RTM_READ_DELAY = 1
