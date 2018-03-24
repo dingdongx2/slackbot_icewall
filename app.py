@@ -33,6 +33,7 @@ def parse_bot_commands(slack_events):
 
             if message in data["talk"]:
                 return message, event["channel"]
+
             if message.startswith("전번"):
                 message = message.split("전번 ")[1]
                 return message, event["channel"]
@@ -56,6 +57,10 @@ def parse_bot_commands(slack_events):
                 return message, event["channel"]
             elif message.endswith("번호내놔"):
                 message = message.split(" 번호내놔")[0]
+                return message, event["channel"]
+
+            elif message.startswith("마법의 소라고동님"):
+                message = "마법의 소라고동님"
                 return message, event["channel"]
 
             # return message, event["channel"]
