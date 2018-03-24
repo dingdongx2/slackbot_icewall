@@ -1,6 +1,8 @@
 import os
 import re
 import json
+from random import choice
+# from random import choice
 with open('./direction.json', encoding="UTF8") as f:    
     data = json.load(f)
 with open('./store.json') as f:
@@ -31,32 +33,29 @@ def parse_bot_commands(slack_events):
 
             if message in data["talk"]:
                 return message, event["channel"]
-            # if message in data["s_talk"]:
-            #     return message, event["channel"]
-
-            if message.startswith('전번'):
-                message = message.split('전번 ')[1]
+            if message.startswith("전번"):
+                message = message.split("전번 ")[1]
                 return message, event["channel"]
             elif message.endswith("번호뭐야"):
-                message = message.split(' 번호뭐야')[0]
+                message = message.split(" 번호뭐야")[0]
                 return message, event["channel"]
             elif message.endswith("번호뭐야?"):
-                message = message.split(' 번호뭐야?')[0]
+                message = message.split(" 번호뭐야?")[0]
                 return message, event["channel"]
             elif message.endswith("번호 뭐야?"):
-                message = message.split(' 번호 뭐야?')[0]
+                message = message.split(" 번호 뭐야?")[0]
                 return message, event["channel"]
             elif message.endswith("번호 뭐야"):
-                message = message.split(' 번호 뭐야')[0]
+                message = message.split(" 번호 뭐야")[0]
                 return message, event["channel"]
             elif message.endswith("번호 알아?"):
-                message = message.split(' 번호 알아?')[0]
+                message = message.split(" 번호 알아?")[0]
                 return message, event["channel"]
             elif message.endswith("번호알아?"):
-                message = message.split(' 번호알아?')[0]
+                message = message.split(" 번호알아?")[0]
                 return message, event["channel"]
             elif message.endswith("번호내놔"):
-                message = message.split(' 번호내놔')[0]
+                message = message.split(" 번호내놔")[0]
                 return message, event["channel"]
 
             # return message, event["channel"]
@@ -84,10 +83,12 @@ def handle_command(command, channel):
             response = data["number"][command]
 
         if command in data["talk"]: #normal talking
-            response = data["talk"][command]
 
-        # if command in data["s_talk"]:
-        #     response = data["s_talk"][command]
+            if isinstance(data["talk"][command],list):
+                response = choice(data["talk"][command])
+            
+            else:
+                response = data["talk"][command]
     except:
         pass
 
