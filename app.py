@@ -80,10 +80,13 @@ def handle_command(command, channel):
 
     try:
         if command in data["number"]: #asking tel
-            response = data["number"][command]
+            if isinstance(data["number"][command],list):
+                response = choice(data["number"][command])
+            
+            else:
+                response = data["number"][command]
 
         if command in data["talk"]: #normal talking
-
             if isinstance(data["talk"][command],list):
                 response = choice(data["talk"][command])
             
