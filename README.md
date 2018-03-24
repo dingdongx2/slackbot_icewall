@@ -22,3 +22,9 @@ Talking
 ask him/her
 > how to **ask**?
 > - 짖어라 / 아이스 / 인사해봐 / 소개해봐 / 토끼야 안녕
+
+Asking
+-------------
+ask him/her what to do!
+> how to **ask**?
+> - starts with.. "뭐먹지? / ㅁㅁ / 마법의 소라고동님 / 수업 쨀까?" 
