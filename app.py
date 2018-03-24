@@ -18,7 +18,7 @@ starterbot_id = 'overaction'
 RTM_READ_DELAY = 1
 MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
 EXAMPLE_COMMAND = "do"
-# KNOWING = 0 #0: ready 1:direction catch 2:know
+# istel = 0 0: ready 1:direction catch 2:know
 
 def parse_bot_commands(slack_events):
     """
@@ -90,6 +90,8 @@ def handle_command(command, channel):
             
             else:
                 response = data["number"][command]
+        else:
+            response = command + "? 몰라!"
 
         if command in data["talk"]: #normal talking
             if isinstance(data["talk"][command],list):
