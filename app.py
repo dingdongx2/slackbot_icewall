@@ -115,7 +115,7 @@ def handle_command(command, channel):
         text=response or default_response
     )
 
-def __init__ :
+# def __init__ :
 
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False):
