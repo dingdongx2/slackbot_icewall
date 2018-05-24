@@ -3,11 +3,11 @@ import re
 import json
 from random import choice
 # from random import choice
-with open('./direction.json', encoding="UTF8") as f:    
+with open('./direction.json', encoding="UTF8") as f:
     data = json.load(f)
 with open('./store.json') as f:
     store = json.load(f)
-with open('./inform.json', encoding="UTF8") as f:    
+with open('./inform.json', encoding="UTF8") as f:
     inform = json.load(f)
 
 from time import sleep
@@ -22,6 +22,8 @@ MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
 EXAMPLE_COMMAND = "do"
 # istel = 0 0: ready 1:direction catch 2:know
 
+# notification
+# def notify(user, message) :
 
 
 def parse_bot_commands(slack_events):
@@ -91,7 +93,7 @@ def handle_command(command, channel):
         if command in data["number"]: #asking tel
             if isinstance(data["number"][command],list):
                 response = choice(data["number"][command])
-            
+
             else:
                 response = data["number"][command]
         else:
@@ -100,7 +102,7 @@ def handle_command(command, channel):
         if command in data["talk"]: #normal talking
             if isinstance(data["talk"][command],list):
                 response = choice(data["talk"][command])
-            
+
             else:
                 response = data["talk"][command]
     except:
@@ -112,6 +114,8 @@ def handle_command(command, channel):
         channel=channel,
         text=response or default_response
     )
+
+def __init__ :
 
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False):
