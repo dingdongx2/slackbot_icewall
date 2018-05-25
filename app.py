@@ -7,8 +7,8 @@ with open('./direction.json', encoding="UTF8") as f:
     data = json.load(f)
 with open('./store.json') as f:
     store = json.load(f)
-with open('./inform.json', encoding="UTF8") as f:
-    inform = json.load(f)
+# with open('./inform.json', encoding="UTF8") as f:
+#     inform = json.load(f)
 
 from time import sleep
 from slackclient import SlackClient
@@ -125,8 +125,8 @@ if __name__ == "__main__":
             command, channel = parse_bot_commands(slack_client.rtm_read())
             if command:
                 handle_command(command, channel)
-                print(command)
-                print(channel)
+                # print(command)
+                # print(channel)
             sleep(config['RTM_READ_DELAY'])
     else:
         print("Connection failed.")
