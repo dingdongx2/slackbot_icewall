@@ -87,7 +87,7 @@ def handle_command(command, channel):
         Executes bot command if the command is known
     """
     # Default response is help text for the user
-    #response = command + " 물어봤니?"
+    # response = command + " 물어봤니?"
 
     try:
         if command in data["number"]: #asking tel
@@ -125,7 +125,7 @@ if __name__ == "__main__":
             command, channel = parse_bot_commands(slack_client.rtm_read())
             if command:
                 handle_command(command, channel)
-                # print(command)
+                print(command)
                 # print(channel)
             sleep(config['RTM_READ_DELAY'])
     else:
