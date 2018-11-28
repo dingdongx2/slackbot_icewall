@@ -129,6 +129,5 @@ if __name__ == "__main__":
                 print("[",datetime.datetime.now(),"] command: ",command)
                 # print(channel)
             sleep(config['RTM_READ_DELAY'])
-            print("[",datetime.datetime.now(),"] delayed")
     else:
-        print("Connection failed.")
+        print("[",datetime.datetime.now(),"] Connection failed.")
