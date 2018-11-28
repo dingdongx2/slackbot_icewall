@@ -2,6 +2,7 @@ import os
 import re
 import json
 from random import choice
+import datetime
 # from random import choice
 with open('./direction.json', encoding="UTF8") as f:
     data = json.load(f)
@@ -125,7 +126,7 @@ if __name__ == "__main__":
             command, channel = parse_bot_commands(slack_client.rtm_read())
             if command:
                 handle_command(command, channel)
-                print(command)
+                print("[",datetime.datetime.now(),"] command: ",command)
                 # print(channel)
             sleep(config['RTM_READ_DELAY'])
     else:
