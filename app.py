@@ -127,7 +127,8 @@ if __name__ == "__main__":
             if command:
                 handle_command(command, channel)
                 print("[",datetime.datetime.now(),"] command: ",command)
-                print(channel)
+                # print(channel)
             sleep(config['RTM_READ_DELAY'])
+            print("[",datetime.datetime.now(),"] delayed")
     else:
         print("Connection failed.")
